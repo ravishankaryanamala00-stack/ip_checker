@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Server IP Checker</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+  <style type="text/css">
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff; /* default text color white */
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 80px auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      text-align: center;
+      align-items: center;
+      color: #fff; /* ensure container text is white */
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #fff; /* white heading */
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+      color: #fff; /* white label */
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 9px;
+      color: #000; /* input text black for readability */
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #00ffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000; /* button text black for contrast */
+    }
+
+    button:hover {
+      background-color: #00cccc;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #fff; /* response text white */
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #fff; /* footer text white */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Server IP Checker</h1>
+
+    <form id="ipForm">
+      <label for="ip">Enter Server IP:</label>
+      <input id="ip" name="ip" placeholder="ip checker" required type="text" />
+      <button type="submit">Check</button>
+    </form>
+
+    <div id="result">&nbsp;</div>
+
+    <div class="footer">
+      <strong>Made by Shankar And Shreyash</strong><br />
+      @2025
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
