@@ -1,89 +1,63 @@
 <!DOCTYPE html>
+<?xml version="1.0" encoding="utf-16"?>
 <html lang="en">
 <head>
-  <!-- Basic Meta Tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Server IP Checker - Instantly check and verify server IP addresses online. Fast, free, and reliable." />
-  <meta name="keywords" content="Server IP Checker, IP lookup, IP address tool, network diagnostics, online IP check" />
-  <meta name="author" content="Shankar and Shreyash" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://ip-checker-omega.vercel.app/" />
-
-  <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="Server IP Checker - Free Online Tool" />
-  <meta property="og:description" content="Quickly check server IP addresses with our free online tool." />
-  <meta property="og:image" content="{{ url_for('static', filename='globe.jpg') }}" />
-  <meta property="og:url" content="https://ip-checker-omega.vercel.app/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Server IP Checker - Free Online Tool" />
-  <meta name="twitter:description" content="Quickly check server IP addresses with our free online tool." />
-  <meta name="twitter:image" content="{{ url_for('static', filename='globe.jpg') }}" />
-
-  <title>Server IP Checker | Free Online IP Lookup Tool</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  <style>
-    body {
+	<meta charset="UTF-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="Check server IP addresses quickly and easily with our free online IP checker tool." name="description" />
+	<meta content="Server IP Checker, IP lookup, IP tool, IP address, network tools" name="keywords" />
+	<meta content="Shankar and Shreyash" name="author" />
+	<title>Server IP Checker | Free Online IP Lookup Tool</title>
+	<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+	<style type="text/css">body {
       margin: 0;
       font-family: Arial, sans-serif;
-      /* Modern gradient background */
-      background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
-      background-attachment: fixed;
-      background-size: cover;
-      color: #fff;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff; /* default text color white */
     }
 
     .container {
-      max-width: 600px;
+      max-width: 500px;
       margin: 80px auto;
-      background: rgba(0, 0, 0, 0.75); /* semi-transparent overlay for readability */
+      background: rgba(0, 0, 0, 0.7);
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       text-align: center;
+      align-items: center;
+      color: #fff; /* ensure container text is white */
     }
 
     h1 {
-      font-size: 32px;
       margin-bottom: 20px;
-      color: #00ffff;
-    }
-
-    p.intro {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #fff;
+      font-size: 28px;
+      color: #fff; /* white heading */
     }
 
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 10px;
+      color: #fff; /* white label */
     }
 
     input {
-      padding: 12px;
-      width: 85%;
+      padding: 10px;
+      width: 80%;
       border: none;
       border-radius: 5px;
-      margin-bottom: 12px;
-      font-size: 16px;
-      color: #000;
+      margin-bottom: 9px;
+      color: #000; /* input text black for readability */
     }
 
     button {
-      padding: 10px 20px;
+      padding: 5px 10px;
       background-color: #00ffff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 16px;
-      color: #000;
+      color: #000; /* button text black for contrast */
     }
 
     button:hover {
@@ -92,36 +66,58 @@
 
     #result {
       margin-top: 20px;
-      font-size: 18px;
-      color: #fff;
-      font-weight: bold;
+      font-size: 16px;
+      color: #fff; /* response text white */
     }
 
-    footer {
+    .footer {
       margin-top: 30px;
       font-size: 14px;
-      color: #fff;
+      color: #fff; /* footer text white */
     }
-  </style>
+	</style>
 </head>
 <body>
-  <main class="container">
-    <h1>Server IP Checker</h1>
-    <p class="intro">Use our free Server IP Checker to instantly verify IP addresses and diagnose network issues. Fast, reliable, and easy to use.</p>
+<div class="container">
+<h1><img src="https://mcusercontent.com/c0b98556b566d35635e09b8b3/images/a5b27ac2-0fd2-8590-5210-8506917439a5.png" style="height: 47px; width: 50px;" /><br />
+<strong>Server IP Checker</strong></h1>
 
-    <form id="ipForm">
-      <label for="ip">Enter Server IP:</label>
-      <input id="ip" name="ip" placeholder="e.g. 192.168.1.1" required type="text" />
-      <button type="submit">Check</button>
-    </form>
+<form id="ipForm"><label for="ip">Enter Server IP:</label> <input id="ip" name="ip" placeholder="ip checker" required="" type="text" /><button type="submit">Check</button></form>
 
-    <section id="result">&nbsp;</section>
+<div id="result">
+<section>
+<h2 style="color: rgb(0, 255, 255);">Why Check Server IPs?</h2>
 
-    <footer>
-      <strong>Made by Shankar And Shreyash</strong><br />
-      &copy; 2025
-    </footer>
-  </main>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
+<p style="margin-bottom: 20px;">Checking server IPs helps ensure your website is accessible worldwide,&nbsp;A properly configured IP address allows search engines to crawl your site efficiently and users to connect without downtime.</p>
+</section>
+
+<section>
+<h2 style="color: rgb(0, 255, 255);">Benefits of Using Our Tool</h2>
+
+<ul>
+	<li>✅ Instant IP verification</li>
+	<li>✅ Helps diagnose server issues</li>
+	<li>✅ Free and easy to use</li>
+</ul>
+</section>
+
+<section>
+<h2 style="color: rgb(0, 255, 255);">Frequently Asked Questions (FAQ)</h2>
+
+<h3 style="color: rgb(0, 255, 255);">What is an IP address?</h3>
+
+<p style="margin-bottom: 20px;">An IP address is a unique identifier for a device or server on the internet.</p>
+
+<p style="margin-bottom: 20px;">By ensuring your server IP is reliable, search engines can crawl your site without interruptions, boosting your ranking.</p>
+
+<h3 style="color: rgb(0, 255, 255);">Is this tool free?</h3>
+
+<p style="margin-bottom: 20px;">Yes, our IP checker is completely free to use.<br />
+<br />
+<strong style="color: rgb(204, 204, 204); font-size: 14px;">MADE by : SHANKAR YANAMALAnd SHREYAS INGLE</strong><br />
+<span style="color: rgb(204, 204, 204); font-size: 14px;">&copy; 2025 &ndash; All Rights Reserved</span></p>
+</section>
+</div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script></body>
 </html>
