@@ -1,63 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Check server IP addresses quickly and easily with our free online IP checker tool." />
-  <meta name="keywords" content="Server IP Checker, IP lookup, IP tool, IP address, network tools" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Server IP Checker - Instantly check and verify server IP addresses online. Fast, free, and reliable." />
+  <meta name="keywords" content="Server IP Checker, IP lookup, IP address tool, network diagnostics, online IP check" />
   <meta name="author" content="Shankar and Shreyash" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ip-checker-omega.vercel.app/" />
+
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Server IP Checker - Free Online Tool" />
+  <meta property="og:description" content="Quickly check server IP addresses with our free online tool." />
+  <meta property="og:image" content="{{ url_for('static', filename='globe.jpg') }}" />
+  <meta property="og:url" content="https://ip-checker-omega.vercel.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Server IP Checker - Free Online Tool" />
+  <meta name="twitter:description" content="Quickly check server IP addresses with our free online tool." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='globe.jpg') }}" />
+
   <title>Server IP Checker | Free Online IP Lookup Tool</title>
-  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
-  <style type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff; /* default text color white */
+      /* Modern gradient background */
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #fff;
     }
 
     .container {
-      max-width: 500px;
+      max-width: 600px;
       margin: 80px auto;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75); /* semi-transparent overlay for readability */
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       text-align: center;
-      align-items: center;
-      color: #fff; /* ensure container text is white */
     }
 
     h1 {
+      font-size: 32px;
       margin-bottom: 20px;
-      font-size: 28px;
-      color: #fff; /* white heading */
+      color: #00ffff;
+    }
+
+    p.intro {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 10px;
-      color: #fff; /* white label */
     }
 
     input {
-      padding: 10px;
-      width: 80%;
+      padding: 12px;
+      width: 85%;
       border: none;
       border-radius: 5px;
-      margin-bottom: 9px;
-      color: #000; /* input text black for readability */
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #000;
     }
 
     button {
-      padding: 5px 10px;
+      padding: 10px 20px;
       background-color: #00ffff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      color: #000; /* button text black for contrast */
+      font-size: 16px;
+      color: #000;
     }
 
     button:hover {
@@ -66,34 +92,36 @@
 
     #result {
       margin-top: 20px;
-      font-size: 16px;
-      color: #fff; /* response text white */
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
     }
 
-    .footer {
+    footer {
       margin-top: 30px;
       font-size: 14px;
-      color: #fff; /* footer text white */
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>Server IP Checker</h1>
+    <p class="intro">Use our free Server IP Checker to instantly verify IP addresses and diagnose network issues. Fast, reliable, and easy to use.</p>
 
     <form id="ipForm">
       <label for="ip">Enter Server IP:</label>
-      <input id="ip" name="ip" placeholder="ip checker" required type="text" />
+      <input id="ip" name="ip" placeholder="e.g. 192.168.1.1" required type="text" />
       <button type="submit">Check</button>
     </form>
 
-    <div id="result">&nbsp;</div>
+    <section id="result">&nbsp;</section>
 
-    <div class="footer">
+    <footer>
       <strong>Made by Shankar And Shreyash</strong><br />
-      @2025
-    </div>
-  </div>
+      &copy; 2025
+    </footer>
+  </main>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
